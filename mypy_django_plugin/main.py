@@ -232,7 +232,7 @@ class NewSemanalDjangoPlugin(Plugin):
 
     def get_customize_class_mro_hook(self, fullname: str) -> Optional[Callable[[ClassDefContext], None]]:
         if fullname == fullnames.MODEL_CLASS_FULLNAME:
-            return MetaclassAdjustments.adjust_model_class
+            return None
 
         sym = self.lookup_fully_qualified(fullname)
         if (
