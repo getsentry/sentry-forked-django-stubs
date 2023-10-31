@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "django-stubs"
+name = "sentry-forked-django-stubs"
 version = "5.2.1"
 description = "Mypy stubs for Django"
 readme = "README.md"
