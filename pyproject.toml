@@ -1,5 +1,5 @@
 [project]
-name = "django-stubs"
+name = "sentry-forked-django-stubs"
 version = "5.2.7"
 description = "Mypy stubs for Django"
 readme = "README.md"
@@ -56,7 +56,7 @@ tests = [
   "pyyaml==6.0.2",
   # typing:
   "mypy==1.18.1",
-  "django-stubs[compatible-mypy,oracle,redis]",
+  "sentry-forked-django-stubs[compatible-mypy,oracle,redis]",
 ]
 pyright = [
   "pyright==1.1.405",
@@ -73,7 +73,7 @@ Funding = "https://github.com/sponsors/typeddjango"
 "Release notes" = "https://github.com/typeddjango/django-stubs/releases"
 
 [tool.uv.sources]
-django-stubs = { workspace = true }
+sentry-forked-django-stubs = { workspace = true }
 django-stubs-ext = { workspace = true }
 
 [tool.uv.workspace]
@@ -84,7 +84,7 @@ requires = ["uv_build>=0.8.22,<0.9.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = ["django-stubs", "mypy_django_plugin"]
+module-name = ["sentry-forked-django-stubs", "mypy_django_plugin"]
 module-root = ""
 
 [tool.codespell]
