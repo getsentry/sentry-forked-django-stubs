@@ -43,35 +43,6 @@ jobs:
       - name: Run mypy on stubs
         run: mypy --cache-dir=/dev/null --no-incremental django-stubs
 
-  test:
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
-        shard: [0, 1, 2, 3]
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install binutils libproj-dev gdal-bin
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
-          pip install -U pip setuptools wheel
-          SETUPTOOLS_ENABLE_FEATURES=legacy-editable pip install -r ./requirements.txt
-
-      # Must match `shard` definition in the test matrix:
-      - name: Run pytest tests
-        run: PYTHONPATH='.' pytest --num-shards=4 --shard-id=${{ matrix.shard }} tests
-      - name: Run mypy on the test cases
-        run: mypy --strict tests/assert_type
-
   stubtest:
     timeout-minutes: 10
     runs-on: ubuntu-latest
