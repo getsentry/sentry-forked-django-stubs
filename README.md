@@ -16,7 +16,7 @@ git checkout 1.2.3 -b sentry-1.2.3
 - cherry-pick relevant commit(s) from previous releases
 
 releases are done through craft in the release.yml workflow -- make sure to
-target your particular branch with a `+sentry#` release postfix
+target your particular branch with a `.#` release postfix (like `1.2.3.0`)
 
 ___
 
