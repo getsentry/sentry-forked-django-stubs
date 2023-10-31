@@ -1,3 +1,25 @@
+sentry-forked-django-stubs
+==========================
+
+### new release
+
+make a new branch for the fork of an upstream tag:
+
+```bash
+git remote add upstream git@github.com:typeddjango/django-stubs
+git fetch upstream --tags
+git push origin --tags
+git checkout 1.2.3 -b sentry-1.2.3
+```
+
+- cherry-pick the craft / release commit(s) into your branch from `master`
+- cherry-pick relevant commit(s) from previous releases
+
+releases are done through craft in the release.yml workflow -- make sure to
+target your particular branch with a `.#` release postfix (like `1.2.3.0`)
+
+___
+
 <img src="https://raw.githubusercontent.com/typeddjango/django-stubs/master/logo.svg" alt="django-stubs">
 
 [![Build status](https://github.com/typeddjango/django-stubs/workflows/test/badge.svg?branch=master&event=push)](https://github.com/typeddjango/django-stubs/actions?query=workflow%3Atest)
