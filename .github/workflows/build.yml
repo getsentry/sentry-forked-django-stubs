@@ -1,0 +1,26 @@
+name: build
+
+on:
+  pull_request:
+  push:
+    branches: [main, release/**, test-me-*]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+    - run: |
+        set -x
+        pip install build
+        python -m build
+        # TODO: we don't yet need an ext fork
+        # cd ext
+        # python -m build --outdir ../dist
+    - uses: actions/upload-artifact@v3
+      with:
+        name: ${{ github.sha }}
+        path: dist/*
