@@ -37,7 +37,7 @@ extras_require = {
 
 setup(
     name="sentry-forked-django-stubs",
-    version="4.2.6",
+    version="5.0.0-1",
     description="Mypy stubs for Django",
     long_description=readme,
     long_description_content_type="text/markdown",
