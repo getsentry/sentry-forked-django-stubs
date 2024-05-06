@@ -13,6 +13,7 @@ from django.db.models.utils import AltersData
 from django.utils._os import _PathCompatible
 from django.utils.choices import _Choices
 from django.utils.functional import _StrOrPromise
+from typing_extensions import Self
 
 class FieldFile(File, AltersData):
     instance: Model
