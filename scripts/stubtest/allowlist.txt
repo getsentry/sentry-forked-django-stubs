@@ -478,3 +478,13 @@ django.contrib.auth.views.UserModel
 # Using the definitions from `dict` (from typeshed)
 django.contrib.sessions.backends.base.SessionBase.get
 django.contrib.sessions.backends.base.SessionBase.setdefault
+
+# sentry: we remove these methods because they are unsafe for our usage
+django.core.cache.BaseCache.adecr_version
+django.core.cache.BaseCache.aincr_version
+django.core.cache.BaseCache.decr_version
+django.core.cache.BaseCache.incr_version
+django.core.cache.backends.base.BaseCache.adecr_version
+django.core.cache.backends.base.BaseCache.aincr_version
+django.core.cache.backends.base.BaseCache.decr_version
+django.core.cache.backends.base.BaseCache.incr_version
