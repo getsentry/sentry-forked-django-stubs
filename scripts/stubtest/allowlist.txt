@@ -232,6 +232,16 @@ django.contrib.auth.views.UserModel
 django.contrib.sessions.backends.base.SessionBase.get
 django.contrib.sessions.backends.base.SessionBase.setdefault
 
+# sentry: we remove these methods because they are unsafe for our usage
+django.core.cache.BaseCache.adecr_version
+django.core.cache.BaseCache.aincr_version
+django.core.cache.BaseCache.decr_version
+django.core.cache.BaseCache.incr_version
+django.core.cache.backends.base.BaseCache.adecr_version
+django.core.cache.backends.base.BaseCache.aincr_version
+django.core.cache.backends.base.BaseCache.decr_version
+django.core.cache.backends.base.BaseCache.incr_version
+
 # Limited stubtest support for enums (https://github.com/python/mypy/issues/16806)
 django.db.migrations.operations.base.OperationCategory.__new__
 
