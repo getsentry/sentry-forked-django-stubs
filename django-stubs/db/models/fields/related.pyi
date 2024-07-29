@@ -27,9 +27,9 @@ RECURSIVE_RELATIONSHIP_CONSTANT: Literal["self"]
 def resolve_relation(scope_model: type[Model], relation: str | type[Model]) -> str | type[Model]: ...
 
 # __set__ value type
-_ST = TypeVar("_ST")
+_ST = TypeVar("_ST", contravariant=True)
 # __get__ return type
-_GT = TypeVar("_GT")
+_GT = TypeVar("_GT", covariant=True)
 
 class RelatedField(FieldCacheMixin, Field[_ST, _GT]):
     one_to_many: bool
