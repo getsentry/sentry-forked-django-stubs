@@ -27,6 +27,7 @@ from mypy_django_plugin.lib import fullnames, helpers
 from mypy_django_plugin.transformers import fields, forms, init_create, manytomany, meta, querysets, request, settings
 from mypy_django_plugin.transformers.functional import resolve_str_promise_attribute
 from mypy_django_plugin.transformers.managers import (
+    construct_as_manager_instance,
     create_new_manager_class_from_as_manager_method,
     create_new_manager_class_from_from_queryset_method,
     reparametrize_any_manager_hook,
@@ -195,6 +196,10 @@ class NewSemanalDjangoPlugin(Plugin):
             fullnames.MANY_TO_MANY_DESCRIPTOR,
         }:
             return manytomany.refine_many_to_many_related_manager
+        elif method_name == "as_manager":
+            info = self._get_typeinfo_or_none(class_fullname)
+            if info and info.has_base(fullnames.QUERYSET_CLASS_FULLNAME):
+                return partial(construct_as_manager_instance, info=info)
 
         manager_classes = self._get_current_manager_bases()
 
