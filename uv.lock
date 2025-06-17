@@ -169,8 +169,8 @@ wheels = [
 ]
 
 [[package]]
-name = "django-stubs"
-version = "5.2.1"
+name = "sentry-forked-django-stubs"
+version = "5.2.1-1"
 source = { editable = "." }
 dependencies = [
     { name = "django" },
@@ -195,7 +195,7 @@ redis = [
 [package.dev-dependencies]
 dev = [
     { name = "django" },
-    { name = "django-stubs", extra = ["compatible-mypy", "oracle", "redis"] },
+    { name = "sentry-forked-django-stubs", extra = ["compatible-mypy", "oracle", "redis"] },
     { name = "jinja2" },
     { name = "mypy" },
     { name = "mysqlclient" },
@@ -212,7 +212,7 @@ pyright = [
 ]
 tests = [
     { name = "django" },
-    { name = "django-stubs", extra = ["compatible-mypy", "oracle", "redis"] },
+    { name = "sentry-forked-django-stubs", extra = ["compatible-mypy", "oracle", "redis"] },
     { name = "jinja2" },
     { name = "mypy" },
     { name = "mysqlclient" },
@@ -241,7 +241,7 @@ provides-extras = ["compatible-mypy", "oracle", "redis"]
 [package.metadata.requires-dev]
 dev = [
     { name = "django", specifier = "==5.2.1" },
-    { name = "django-stubs", extras = ["compatible-mypy", "oracle", "redis"], editable = "." },
+    { name = "sentry-forked-django-stubs", extras = ["compatible-mypy", "oracle", "redis"], editable = "." },
     { name = "jinja2", specifier = "==3.1.6" },
     { name = "mypy", specifier = "==1.16.0" },
     { name = "mysqlclient", specifier = "==2.2.7" },
@@ -256,7 +256,7 @@ dev = [
 pyright = [{ name = "pyright", specifier = "==1.1.401" }]
 tests = [
     { name = "django", specifier = "==5.2.1" },
-    { name = "django-stubs", extras = ["compatible-mypy", "oracle", "redis"], editable = "." },
+    { name = "sentry-forked-django-stubs", extras = ["compatible-mypy", "oracle", "redis"], editable = "." },
     { name = "jinja2", specifier = "==3.1.6" },
     { name = "mypy", specifier = "==1.16.0" },
     { name = "mysqlclient", specifier = "==2.2.7" },
