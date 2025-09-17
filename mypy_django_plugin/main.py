@@ -45,6 +45,7 @@ from mypy_django_plugin.transformers.managers import (
     resolve_manager_method,
 )
 from mypy_django_plugin.transformers.models import (
+    MetaclassAdjustments,
     handle_annotated_type,
     process_model_class,
     set_auth_user_model_boolean_fields,
@@ -211,7 +212,7 @@ class NewSemanalDjangoPlugin(Plugin):
 
     def get_metaclass_hook(self, fullname: str) -> Callable[[ClassDefContext], None] | None:
         if fullname == fullnames.MODEL_METACLASS_FULLNAME:
-            return None
+            return MetaclassAdjustments.adjust_model_class
         return None
 
     def get_base_class_hook(self, fullname: str) -> Callable[[ClassDefContext], None] | None:
