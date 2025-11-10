@@ -1,6 +1,6 @@
 [project]
 name = "sentry-forked-django-stubs"
-version = "5.2.7"
+version = "5.2.7-1"
 description = "Mypy stubs for Django"
 readme = "README.md"
 license = "MIT"
